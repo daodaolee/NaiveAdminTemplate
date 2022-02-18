@@ -1,23 +1,25 @@
 <template>
-  <n-config-provider
+  <NConfigProvider
     :locale="zhCN"
-    :theme="darkTheme"
+    :theme="null"
   >
-    <!-- 容器 -->
-    <router-view />
-  </n-config-provider>
+    <AppProvider>
+      <RouterView />
+    </AppProvider>
+  </NConfigProvider>
 </template>
 
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { zhCN, dateZhCN } from 'naive-ui'
-import { createTheme, inputDark, datePickerDark } from 'naive-ui'
+import { zhCN, dateZhCN, darkTheme } from 'naive-ui'
+import { AppProvider } from "@/components/Application"
 
 export default defineComponent({
+  components:{AppProvider},
   setup() {
     return {
-      darkTheme: createTheme([inputDark, datePickerDark]),
+      darkTheme,
       zhCN,
       // dateZhCN
     }
@@ -25,5 +27,5 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style lang="scss">
 </style>
