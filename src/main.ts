@@ -1,24 +1,25 @@
 import { createApp } from 'vue'
+import App from './App'
+
 import router from './router/index'
-import store from './store/index'
-import App from './App.vue'
-import { setupNaive } from '@/plugins'
+import { createPinia } from 'pinia'
+// 数据持久化
+import piniaPluginPersist from 'pinia-plugin-persist'
 
-async function setupMain() {
+const store = createPinia()
+store.use(piniaPluginPersist)
 
-  const app = createApp(App)
-  // 注册全局常用的 naive-ui 组件
-  setupNaive(app)
+// import { setupNaive } from '@/plugins'
 
-  // 挂载路由
-  app.use(router)
+const app = createApp(App)
+// 注册全局常用的 naive-ui 组件
+// setupNaive(app)
 
-  // 挂载pinia
-  app.use(store)
+// 挂载路由
+app.use(router)
 
-  // 挂载 app
-  app.mount('#app')
-}
+// 挂载pinia
+app.use(store)
 
-
-setupMain()
+// 挂载 app
+app.mount('#app')

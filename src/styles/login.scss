@@ -1,0 +1,21 @@
+.login-page{
+  height: 100vh;
+  background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #506a93;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: auto;
+  background: url(https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg) 0 120px no-repeat;
+  background-size: 95%;
+  background-color: #506a93;
+  .login-form{
+    width: 300px;
+    padding:50px 30px 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+  }
+}

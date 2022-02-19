@@ -9,6 +9,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:vue/vue3-recommended',
+    "plugin:@typescript-eslint/eslint-recommended",
     'plugin:@typescript-eslint/recommended',
     // 'plugin:prettier/recommended',
     // eslint-config-prettier 的缩写
@@ -92,7 +93,7 @@ module.exports = {
     // 强制使用骆驼拼写法命名约定
     camelcase: 'off',
     // 强制使用一致的缩进
-    indent: 'off',
+    indent: ['error', 2],
     // 强制在 JSX 属性中一致地使用双引号或单引号
     // 'jsx-quotes': 'warn',
     // 强制可嵌套的块的最大深度4
@@ -120,15 +121,15 @@ module.exports = {
     // 禁止出现;
     semi: ['warn', 'never'],
     // 强制在块之前使用一致的空格
-    'space-before-blocks': 'warn',
+    'space-before-blocks': 0,
     // 强制在 function的左括号之前使用一致的空格
-    // 'space-before-function-paren': ['warn', 'never'],
+    'space-before-function-paren': 0,
     // 强制在圆括号内使用一致的空格
-    'space-in-parens': 'warn',
+    'space-in-parens': 0,
     // 要求操作符周围有空格
-    'space-infix-ops': 'warn',
+    'space-infix-ops': 0,
     // 强制在一元操作符前后使用一致的空格
-    'space-unary-ops': 'warn',
+    'space-unary-ops': 0,
     // 强制在注释中 // 或 /* 使用一致的空格
     // "spaced-comment": "warn",
     // 强制在 switch 的冒号左右有空格

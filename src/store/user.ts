@@ -1,15 +1,12 @@
-import { defineStore } from 'pinia'
 import http from '@/service/http'
 export const useUserStore = defineStore({
   id: 'user',
-  state: () => {
-    return {
-      name: "daodaolee"
-    }
-  },
+  state: () => ({
+    name: "daodaolee"
+  }),
   actions: {
     updateName(name: string) {
-      this.name = name
+      // this.name = name
     },
     async login() {
       const result = await http.get('/login')
@@ -22,7 +19,8 @@ export const useUserStore = defineStore({
     }
   },
   // 开启数据缓存
+  // @ts-ignore
   persist: {
     enabled: true
-  }
+  },
 })

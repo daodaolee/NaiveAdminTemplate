@@ -19,10 +19,17 @@
     ],
   },
   "include": [
+    "vite.config.*",
+    // "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue",
+    "src/**.d.ts",
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    // "auto-imports.d.ts",
+    // "components.d.ts"
   ],
   "references": [
     {
