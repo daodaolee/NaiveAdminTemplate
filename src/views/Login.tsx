@@ -1,6 +1,6 @@
-import { FormRules, NButton, NCol, NForm, NFormItem, NInput, NRow, useMessage } from 'naive-ui'
+import { FormRules, NButton, NCol, NForm, NFormItem, NInput, NRow, useMessage, NIcon } from 'naive-ui'
+import { GameControllerOutline, PaperPlaneSharp } from '@vicons/ionicons5'
 import '@/styles/login.scss'
-import { Fragment } from 'vue'
 
 export default defineComponent({
   name: 'login',
@@ -28,6 +28,14 @@ export default defineComponent({
         }
       })
     }
+    const slots = {
+      prefix: () => (<>
+        <NIcon component={GameControllerOutline} depth="1"></NIcon>
+      </>),
+      suffix: () => (<>
+        <NIcon component={PaperPlaneSharp}  depth="1"></NIcon>
+      </>)
+    }
 
     return () => (
       <div class="login-page">
@@ -40,11 +48,11 @@ export default defineComponent({
             labelPlacement="left"
           >
             <NFormItem path="username">
-              <NInput v-model:value={loginForm.username} placeholder="请输入账号">
+              <NInput v-model:value={loginForm.username} placeholder="请输入账号" v-slots={slots}>
               </NInput>
             </NFormItem>
             <NFormItem path="password">
-              <NInput v-model:value={loginForm.password} type="password"  placeholder="请输入密码"/>
+              <NInput v-model:value={loginForm.password} type="password" placeholder="请输入密码" />
             </NFormItem>
             <NRow >
               <NCol span={24}>
